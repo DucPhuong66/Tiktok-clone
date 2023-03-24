@@ -1,5 +1,5 @@
 .wrapper {
-    --search-border-raidus: 92px;
+    --search-border-radius: 92px;
     --search-height: 46px;
     --search-top-spacer: 9px;
     --search-button-width: 52px;
@@ -31,7 +31,7 @@
 .search {
     height: var(--search-height, 46px);
     background-color:rgba(22, 24, 35, .06);
-    border-radius: var(--search-border-raidus);
+    border-radius: var(--search-border-radius);
     padding-left: 16px;
     display: flex;
     position: relative;
@@ -76,8 +76,8 @@
 .search-btn {
     width: var(--search-button-width);
     height: 100%;
-    border-top-right-radius: var(--search-border-raidus);
-    border-bottom-right-radius: var(--search-border-raidus);
+    border-top-right-radius: var(--search-border-radius);
+    border-bottom-right-radius: var(--search-border-radius);
     font-size: 1.8rem;
     color: rgba(22, 24, 35, 0.34);
 
