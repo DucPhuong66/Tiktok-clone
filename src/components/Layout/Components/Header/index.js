@@ -9,6 +9,7 @@ import classNames from 'classnames/bind';
 import { Wrapper as PopperWrapper } from '~/Components/Popper';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
+import AccountItem from '../../../AccountItem';
 
 
 const cx = classNames.bind(styles);
@@ -19,7 +20,7 @@ function Header() {
 
     useEffect(() => {
         setTimeout(() => {
-                setSearchResult([1, 2, 3]);
+                setSearchResult([]);
         }, 0)
     }, [])
 
@@ -35,7 +36,14 @@ function Header() {
                     render = {(attrs) => (
                         <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                             <PopperWrapper>
-                                Ket qua
+                                <h4 className={cx('search-title')}> 
+                                  Accounts  
+                                </h4>
+                                <AccountItem />
+                                    <AccountItem />
+                                    <AccountItem />
+                                    <AccountItem />
+                                    <AccountItem />
                             </PopperWrapper>
                         </div>
                     )} >
