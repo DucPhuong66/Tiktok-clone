@@ -22,11 +22,11 @@
 
 
 .logo {
-  
+  min-width: 300px;
 }
 
 .search, .search-result {
-    width: 361px;
+    width: 415px;
 }
 
 .search {
@@ -114,6 +114,7 @@
         color: #161823;
         padding: 4px 12px;
         cursor: pointer;
+        display: flex;
     }
     .user-avatar {
         height: 32px;

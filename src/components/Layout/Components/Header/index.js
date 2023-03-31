@@ -1,7 +1,6 @@
 import {
     faCircleQuestion,
     faCircleXmark,
-    faCloudUpload,
     faCoins,
     faEllipsisVertical,
     faGear,
@@ -25,10 +24,10 @@ import images from '~/assets/images';
 import AccountItem from '../../../AccountItem';
 import Menu from '../../../Popper/Menu';
 import { faKeyboard } from '@fortawesome/free-regular-svg-icons';
+import { InboxIcon, MessageIcon, UploadBtn } from '../../../icons';
+import  Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
-
-
 
 const MENU_ITEMS = [
     {
@@ -60,7 +59,6 @@ const MENU_ITEMS = [
         title: 'Keyboard shortcut',
     },
 ];
-
 
 function Header() {
     const [searchResult, setSearchResult] = useState([]);
@@ -105,10 +103,8 @@ function Header() {
             title: 'Logout',
             to: '/logout',
             separate: true,
-        }
+        },
     ];
-    
-   
 
     return (
         <header className={cx('wrapper')}>
@@ -149,9 +145,19 @@ function Header() {
                     {currentUser ? (
                         <>
                             <Tippy delay={[0, 250]} content="Upload video" placement="bottom">
-                                <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faCloudUpload} />
-                                </button>
+                                <>  
+                                
+                                    <Button href='/upload' className='UploadBtn'>
+                                        <UploadBtn />
+                                        <span>Upload</span> 
+                                    </Button>
+                                    <button className={cx('action-btn')}>
+                                        <MessageIcon />
+                                    </button>
+                                    <button className={cx('action-btn')}>
+                                        <InboxIcon />
+                                    </button>
+                                </>
                             </Tippy>
                         </>
                     ) : (
@@ -162,10 +168,11 @@ function Header() {
                     )}
                     <Menu items={userMenu ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 className={cx('user-avatar')}
-                                src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/cc16a268af0efb3e9339719270984bc8~c5_720x720.jpeg?x-expires=1680408000&x-signature=ZesU%2FeLzXRNd6hkXmkKQ5nU52dw%3D"
+                                src="http://localhost:3000/upload"
                                 alt="Phuong Duc"
+                                fallback = "https://images.unsplash.com/photo-1680252112129-91e7840cba38?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
                             />
                         ) : (
                             <button className={cx('more-icon')}>
