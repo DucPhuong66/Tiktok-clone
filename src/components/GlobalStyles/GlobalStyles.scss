@@ -10,7 +10,7 @@
     --default-layout-header-height: 60px;
     --default-layout-width: 1150px;
     --default-layout-horizontal-spacer: 24px;
-    --text-color: #333;
+    --text-color: #161823;
 }
 
 * {
@@ -40,3 +40,27 @@ a[href] {
     color: var(--text-color);
     text-decoration: none;
 }
+
+
+// Custom Tippy tooltip
+ body 
+    {
+    .tippy-box {
+    background-color: #545454eb;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    }
+    .tippy-arrow {
+        color: #545454eb;
+    }
+
+    .tippy-box[data-placement^=bottom]>.tippy-arrow:before {
+        top: -8px;
+    }
+    .tippy-content {
+        padding: 8px 9px;
+    }
+ }
+ 
