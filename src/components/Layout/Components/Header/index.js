@@ -10,6 +10,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
+import { Link } from 'react-router-dom';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 
@@ -20,6 +21,8 @@ import Menu from '../../../Popper/Menu';
 import { faKeyboard } from '@fortawesome/free-regular-svg-icons';
 import { InboxIcon, MessageIcon, UploadBtn } from '../../../icons';
 import  Image from '~/components/Image';
+import routesConfig from '~/config/routes';
+
 
 import Search from '../Search';
 
@@ -101,7 +104,7 @@ function Header() {
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <div className={cx('logo')}>
-                    <img src={images.logo} alt="Tiktok"></img>
+                    <Link className={cx('logo-link')} to={routesConfig.home}><img src={images.logo} alt="Tiktok"></img></Link>
                 </div>
                 
                 <Search />
@@ -109,7 +112,7 @@ function Header() {
                 <div className={cx('actions')}>
                     {currentUser ? (
                         <>
-                            <Button href='/upload' className='UploadBtn'>
+                            <Button href={routesConfig.upload} className='UploadBtn'>
                                 <UploadBtn />
                                 <span>Upload</span> 
                             </Button>
@@ -132,7 +135,7 @@ function Header() {
                             <Button primary>Log in</Button>
                         </>
                     )}
-                    <Menu items={userMenu ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
+                    <Menu  items={userMenu ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
                             <Image
                                 className={cx('user-avatar')}
