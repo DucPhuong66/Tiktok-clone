@@ -5,7 +5,8 @@
     border-radius: 8px;
     max-height: min((100vh - 96px) - 60px, 734px);
     min-height: 100px;
-    overflow: hidden auto;
     list-style-type: none;
     padding-top: 8px;
+    display: flex;
+    flex-direction: column;
 }
