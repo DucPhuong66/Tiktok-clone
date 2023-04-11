@@ -50,6 +50,7 @@
     background-color: var(--primary);
     color: var(--white);
     border-color: var(--primary);
+    line-height: normal;
     &:hover {
         background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)),#FE2C55;
         border-color: var(--primary);
